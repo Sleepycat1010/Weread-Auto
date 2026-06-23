@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>微信读书 · 自动阅读状态</title>
+<style>
+  :root{
+    --bg:#0f1115; --card:#181b22; --card2:#1f232c; --line:#2a2f3a;
+    --txt:#e7e9ee; --sub:#9aa3b2; --accent:#4f8cff; --green:#3ecf8e; --gold:#f7b955;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%, #1b2030 0%, var(--bg) 60%);
+    color:var(--txt); min-height:100vh; padding:32px 16px 60px; line-height:1.5;
+  }
+  .wrap{max-width:880px;margin:0 auto}
+  header{text-align:center;margin-bottom:28px}
+  header h1{font-size:26px;font-weight:700;letter-spacing:.5px}
+  header .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 4px rgba(62,207,142,.15);margin-right:8px;vertical-align:middle;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  header p{color:var(--sub);font-size:13px;margin-top:8px}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 14px;text-align:center}
+  .stat .num{font-size:30px;font-weight:700;color:var(--accent)}
+  .stat .num.green{color:var(--green)} .stat .num.gold{color:var(--gold)}
+  .stat .lbl{font-size:12px;color:var(--sub);margin-top:6px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:18px}
+  .card h2{font-size:14px;color:var(--sub);font-weight:600;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px}
+  .now{display:flex;align-items:center;gap:16px}
+  .now .cover{width:52px;height:72px;border-radius:8px;background:linear-gradient(135deg,#4f8cff,#3ecf8e);
+    display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+  .now .info .t{font-size:19px;font-weight:700}
+  .now .info .m{font-size:13px;color:var(--sub);margin-top:4px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}}
+  .bars{display:flex;align-items:flex-end;gap:10px;height:120px;padding-top:10px}
+  .bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
+  .bar .fill{width:100%;background:linear-gradient(180deg,var(--accent),#2d5bbf);border-radius:6px 6px 0 0;min-height:4px;transition:height .6s}
+  .bar .d{font-size:11px;color:var(--sub)} .bar .v{font-size:11px;color:var(--txt)}
+  ul.books{list-style:none;display:flex;flex-direction:column;gap:8px;max-height:260px;overflow:auto}
+  ul.books li{display:flex;justify-content:space-between;align-items:center;background:var(--card2);
+    border-radius:10px;padding:10px 14px;font-size:14px}
+  ul.books li .when{font-size:11px;color:var(--sub)}
+  .tag{display:inline-block;background:rgba(247,185,85,.15);color:var(--gold);font-size:12px;
+    padding:3px 10px;border-radius:20px;margin:2px}
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:24px}
+  footer a{color:var(--accent);text-decoration:none}
+  .err{color:#ff6b6b;text-align:center;padding:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="dot"></span>微信读书 · 自动阅读状态</h1>
+    <p id="updated">加载中…</p>
+  </header>
+
+  <div class="grid">
+    <div class="stat"><div class="num" id="s-days">–</div><div class="lbl">累计运行天数</div></div>
+    <div class="stat"><div class="num green" id="s-hours">–</div><div class="lbl">累计阅读时长(h)</div></div>
+    <div class="stat"><div class="num gold" id="s-finished">–</div><div class="lbl">已读完书籍</div></div>
+    <div class="stat"><div class="num" id="s-target">–</div><div class="lbl">每日目标(min)</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📖 当前在读</h2>
+    <div class="now">
+      <div class="cover">📚</div>
+      <div class="info">
+        <div class="t" id="cur-title">–</div>
+        <div class="m" id="cur-meta">–</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="card">
+      <h2>📊 近日阅读时长(分钟)</h2>
+      <div class="bars" id="bars"></div>
+    </div>
+    <div class="card">
+      <h2>⏭️ 下一本来源 / 排除书单</h2>
+      <p style="font-size:14px;margin-bottom:10px">下一本选自榜单：<b id="next-src" style="color:var(--accent)">–</b></p>
+      <div id="excluded"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>✅ 已读完书籍</h2>
+    <ul class="books" id="finished-list"></ul>
+  </div>
+
+  <footer>
+    数据每 30 分钟由服务器自动更新 · 页面每 5 分钟自动刷新 ·
+    <a href="https://github.com/Sleepycat1010/Weread-Auto" target="_blank">GitHub</a>
+  </footer>
+</div>
+
+<script>
+const fmtTime = iso => { if(!iso) return '未知'; const d=new Date(iso);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')+
+  ' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); };
+const fmtDate = iso => { if(!iso) return ''; const d=new Date(iso);
+  return (d.getMonth()+1)+'/'+d.getDate(); };
+
+async function load(){
+  try{
+    const res = await fetch('data/status.json?t=' + Date.now());
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const d = await res.json();
+    render(d);
+  }catch(e){
+    document.getElementById('updated').innerHTML =
+      '<span class="err">数据加载失败：'+e.message+'</span>';
+  }
+}
+
+function render(d){
+  document.getElementById('updated').textContent = '数据更新于 ' + fmtTime(d.updatedAt);
+  const st = d.stats||{};
+  document.getElementById('s-days').textContent = st.runDays ?? '–';
+  document.getElementById('s-hours').textContent = st.totalHours ?? '–';
+  document.getElementById('s-finished').textContent = st.finishedCount ?? '–';
+  document.getElementById('s-target').textContent = st.dailyTargetMinutes ?? '–';
+
+  const cb = d.currentBook;
+  document.getElementById('cur-title').textContent = cb ? cb.title : '暂无';
+  document.getElementById('cur-meta').textContent = cb
+    ? (cb.source?('来源：'+cb.source+' · '):'')+'选中于 '+fmtTime(cb.selectedAt) : '';
+
+  document.getElementById('next-src').textContent = d.nextLeaderboard || '默认书架';
+
+  const exc = document.getElementById('excluded');
+  exc.innerHTML = (d.excludedBooks&&d.excludedBooks.length)
+    ? '排除：' + d.excludedBooks.map(b=>'<span class="tag">'+b+'</span>').join('')
+    : '<span style="color:var(--sub);font-size:13px">无排除书籍</span>';
+
+  // bars
+  const bars = document.getElementById('bars');
+  const dm = d.dailyMinutes||[];
+  const max = Math.max(1, ...dm.map(x=>x.minutes));
+  bars.innerHTML = dm.map(x=>{
+    const h = Math.round(x.minutes/max*100);
+    return '<div class="bar"><span class="v">'+x.minutes+'</span>'+
+      '<div class="fill" style="height:'+h+'%"></div>'+
+      '<span class="d">'+fmtDate(x.date)+'</span></div>';
+  }).join('');
+
+  // finished list
+  const fl = document.getElementById('finished-list');
+  const fb = (d.finishedBooks||[]).slice().reverse();
+  fl.innerHTML = fb.length ? fb.map(b=>
+    '<li><span>'+b.title+(b.author?' · '+b.author:'')+'</span>'+
+    '<span class="when">'+fmtTime(b.finishedAt)+'</span></li>').join('')
+    : '<li>暂无</li>';
+}
+
+load();
+setInterval(load, 5*60*1000); // 每5分钟自动刷新
+</script>
+</body>
+</html>

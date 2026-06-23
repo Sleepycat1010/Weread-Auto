@@ -1,0 +1,86 @@
+{
+  "updatedAt": "2026-06-23T07:47:17.655Z",
+  "currentBook": {
+    "title": "犹太人四千年（全两册）",
+    "bookId": "910323a0726c87629106646",
+    "selectedAt": "2026-06-22T23:58:18.020Z",
+    "source": "我的书架"
+  },
+  "nextLeaderboard": "微信读书用户近期热读的出版书",
+  "stats": {
+    "runDays": 5,
+    "totalMinutes": 2757,
+    "totalHours": 46,
+    "finishedCount": 8,
+    "currentRunCount": 3,
+    "dailyTargetMinutes": 570,
+    "lastRunAt": "2026-06-16T22:00:35.700Z"
+  },
+  "dailyMinutes": [
+    {
+      "date": "2026-06-18",
+      "minutes": 478
+    },
+    {
+      "date": "2026-06-19",
+      "minutes": 569
+    },
+    {
+      "date": "2026-06-20",
+      "minutes": 570
+    },
+    {
+      "date": "2026-06-22",
+      "minutes": 570
+    },
+    {
+      "date": "2026-06-23",
+      "minutes": 570
+    }
+  ],
+  "finishedBooks": [
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-18T06:53:12.876Z"
+    },
+    {
+      "title": "牧神记（同名国漫原著）",
+      "author": null,
+      "finishedAt": "2026-06-18T08:00:00.970Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-18T08:00:50.775Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-18T23:05:23.613Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-20T00:17:39.927Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-20T23:40:33.311Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-22T00:13:38.606Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-22T23:58:10.653Z"
+    }
+  ],
+  "excludedBooks": [
+    "牧神记（同名国漫原著）"
+  ]
+}
