@@ -1,0 +1,27 @@
+# 依赖
+node_modules/
+nodejs/
+nodejs-linux/
+
+# 登录态 / 敏感信息（绝不上传）
+**/cookies.json
+.weread/
+**/.weread/
+
+# 日志
+*.log
+**/*.log
+
+# 浏览器驱动 / 二进制（体积大，按需自行下载）
+**/chromedriver
+**/chromedriver.bak
+**/chromedriver.old
+**/edgedriver.exe
+**/chrome-headless-shell*
+
+# 截图 / 临时产物
+*.png
+current-reading-page.png
+
+# 系统
+.DS_Store
