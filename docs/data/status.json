@@ -1,19 +1,49 @@
 {
-  "updatedAt": "2026-06-23T08:00:01.632Z",
+  "updatedAt": "2026-06-23T08:30:02.728Z",
   "currentBook": {
     "title": "犹太人四千年（全两册）",
     "bookId": "910323a0726c87629106646",
     "selectedAt": "2026-06-22T23:58:18.020Z",
     "source": "我的书架"
   },
+  "nextBook": {
+    "title": "剑来（1-54 完结精校版）",
+    "author": "烽火戏诸侯",
+    "progress": 0
+  },
+  "upcomingBooks": [
+    {
+      "title": "剑来（1-54 完结精校版）",
+      "author": "烽火戏诸侯",
+      "progress": 0
+    },
+    {
+      "title": "明朝那些事儿（全集）",
+      "author": "当年明月",
+      "progress": 95
+    },
+    {
+      "title": "青山",
+      "author": "会说话的肘子",
+      "progress": 99
+    },
+    {
+      "title": "二号首长（全三册）",
+      "author": "黄晓阳",
+      "progress": 3
+    }
+  ],
   "nextLeaderboard": "微信读书用户近期热读的出版书",
+  "nextSourceHint": "我的书架（按最近阅读 + 排除已读/书单推算）",
   "stats": {
     "runDays": 5,
     "totalMinutes": 2757,
     "totalHours": 46,
     "finishedCount": 8,
+    "finishedUniqueCount": 2,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
+    "avgMinutes": 551,
     "lastRunAt": "2026-06-16T22:00:35.700Z"
   },
   "dailyMinutes": [
