@@ -47,6 +47,14 @@
   ul.books li .when{font-size:11px;color:var(--sub)}
   .tag{display:inline-block;background:rgba(247,185,85,.15);color:var(--gold);font-size:12px;
     padding:3px 10px;border-radius:20px;margin:2px}
+  .next .next-title{font-size:18px;font-weight:700;color:var(--green)}
+  .next .next-meta{font-size:12px;color:var(--sub);margin-top:4px}
+  .up{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .up li{display:flex;justify-content:space-between;align-items:center;background:var(--card2);
+    border-radius:8px;padding:8px 12px;font-size:13px}
+  .up li .qn{color:var(--sub);font-size:11px;margin-right:8px}
+  .up li .pg{font-size:11px;color:var(--gold)}
+  .up-h{font-size:11px;color:var(--sub);margin:8px 0 6px;text-transform:uppercase;letter-spacing:1px}
   footer{text-align:center;color:var(--sub);font-size:12px;margin-top:24px}
   footer a{color:var(--accent);text-decoration:none}
   .err{color:#ff6b6b;text-align:center;padding:20px}
@@ -83,9 +91,14 @@
       <div class="bars" id="bars"></div>
     </div>
     <div class="card">
-      <h2>⏭️ 下一本来源 / 排除书单</h2>
-      <p style="font-size:14px;margin-bottom:10px">下一本选自榜单：<b id="next-src" style="color:var(--accent)">–</b></p>
-      <div id="excluded"></div>
+      <h2>⏭️ 下一本预计阅读</h2>
+      <div class="next" id="next-wrap">
+        <div class="next-title" id="next-title">–</div>
+        <div class="next-meta" id="next-meta"></div>
+      </div>
+      <div id="upcoming" style="margin-top:12px"></div>
+      <p id="next-hint" style="font-size:11px;color:var(--sub);margin-top:10px"></p>
+      <div id="excluded" style="margin-top:12px"></div>
     </div>
   </div>
 
@@ -132,7 +145,20 @@ function render(d){
   document.getElementById('cur-meta').textContent = cb
     ? (cb.source?('来源：'+cb.source+' · '):'')+'选中于 '+fmtTime(cb.selectedAt) : '';
 
-  document.getElementById('next-src').textContent = d.nextLeaderboard || '默认书架';
+  // 下一本预计阅读
+  const nb = d.nextBook;
+  document.getElementById('next-title').textContent = nb ? nb.title : '暂无可读新书';
+  document.getElementById('next-meta').textContent = nb
+    ? [nb.author, (nb.progress!=null?'已读 '+nb.progress+'%':'')].filter(Boolean).join(' · ') : '';
+
+  const up = document.getElementById('upcoming');
+  const list = (d.upcomingBooks||[]).slice(1); // 首本已作为“下一本”展示
+  up.innerHTML = list.length
+    ? '<div class="up-h">后续候选</div><ul class="up">' + list.map((b,i)=>
+        '<li><span><span class="qn">'+(i+2)+'</span>'+b.title+(b.author?' · '+b.author:'')+'</span>'+
+        '<span class="pg">'+(b.progress!=null?b.progress+'%':'')+'</span></li>').join('') + '</ul>'
+    : '';
+  document.getElementById('next-hint').textContent = d.nextSourceHint || '';
 
   const exc = document.getElementById('excluded');
   exc.innerHTML = (d.excludedBooks&&d.excludedBooks.length)

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T03:30:01.976Z",
+  "updatedAt": "2026-06-24T03:31:38.399Z",
   "currentBook": {
     "title": "青山",
     "bookId": "0fa32e3072905a740fa747c",
@@ -7,16 +7,11 @@
     "source": "我的书架"
   },
   "nextBook": {
-    "title": "青山",
-    "author": "会说话的肘子",
-    "progress": 99
+    "title": "剑来（1-54 完结精校版）",
+    "author": "烽火戏诸侯",
+    "progress": 0
   },
   "upcomingBooks": [
-    {
-      "title": "青山",
-      "author": "会说话的肘子",
-      "progress": 99
-    },
     {
       "title": "剑来（1-54 完结精校版）",
       "author": "烽火戏诸侯",
