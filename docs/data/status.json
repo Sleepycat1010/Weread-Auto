@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-06-24T00:00:01.505Z",
+  "updatedAt": "2026-06-24T00:30:01.549Z",
   "currentBook": {
-    "title": "犹太人四千年（全两册）",
-    "bookId": "910323a0726c87629106646",
-    "selectedAt": "2026-06-22T23:58:18.020Z",
+    "title": "青山",
+    "bookId": "0fa32e3072905a740fa747c",
+    "selectedAt": "2026-06-24T00:18:28.094Z",
     "source": "我的书架"
   },
   "nextBook": {
@@ -39,7 +39,7 @@
     "runDays": 6,
     "totalMinutes": 2761,
     "totalHours": 46,
-    "finishedCount": 8,
+    "finishedCount": 9,
     "finishedUniqueCount": 2,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
@@ -112,6 +112,11 @@
       "title": "带着农场混异界",
       "author": null,
       "finishedAt": "2026-06-22T23:58:10.653Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-24T00:18:22.456Z"
     }
   ],
   "excludedBooks": [
