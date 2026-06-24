@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-24T07:30:01.365Z",
+  "updatedAt": "2026-06-24T08:00:02.633Z",
   "currentBook": {
     "title": "犹太人四千年（全两册）",
     "bookId": "910323a0726c87629106646",
@@ -26,10 +26,15 @@
       "title": "二号首长（全三册）",
       "author": "黄晓阳",
       "progress": 3
+    },
+    {
+      "title": "宋慈洗冤笔记 第1-2季（已更新第二季第三册）",
+      "author": "巫童",
+      "progress": 0
     }
   ],
   "nextLeaderboard": "微信读书用户近期热读的出版书",
-  "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
+  "nextSourceHint": "我的书架（按最近阅读 + 排除已读/书单推算）",
   "stats": {
     "runDays": 6,
     "totalMinutes": 2761,
