@@ -6,89 +6,175 @@
 <title>微信读书 · 自动阅读状态</title>
 <style>
   :root{
-    --bg:#0f1115; --card:#181b22; --card2:#1f232c; --line:#2a2f3a;
-    --txt:#e7e9ee; --sub:#9aa3b2; --accent:#4f8cff; --green:#3ecf8e; --gold:#f7b955;
-    --radius:16px;
+    --bg:#090b10; --surface:#12151d; --card:#171b24; --card-hover:#1c202b;
+    --line:rgba(255,255,255,0.06); --line-strong:rgba(255,255,255,0.10);
+    --txt:#e8ebf0; --sub:#8b93a7; --muted:#5c6378;
+    --accent:#5c9dff; --green:#3ecf8e; --gold:#f5b74a; --pink:#ff6b9d; --red:#ff5f5f;
+    --radius:18px; --radius-sm:12px;
+    --shadow:0 8px 32px rgba(0,0,0,0.35);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-    background:radial-gradient(1200px 600px at 50% -10%, #1b2030 0%, var(--bg) 60%);
-    color:var(--txt); min-height:100vh; padding:32px 16px 60px; line-height:1.5;
+    background:radial-gradient(ellipse 900px 500px at 50% -5%, #161b2a 0%, var(--bg) 55%);
+    color:var(--txt); min-height:100vh; padding:40px 16px 60px; line-height:1.55;
   }
-  .wrap{max-width:880px;margin:0 auto}
-  header{text-align:center;margin-bottom:28px}
-  header h1{font-size:26px;font-weight:700;letter-spacing:.5px}
-  header .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);
-    box-shadow:0 0 0 4px rgba(62,207,142,.15);margin-right:8px;vertical-align:middle;animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-  header p{color:var(--sub);font-size:13px;margin-top:8px}
-  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 14px;text-align:center}
-  .stat .num{font-size:30px;font-weight:700;color:var(--accent)}
-  .stat .num.green{color:var(--green)} .stat .num.gold{color:var(--gold)}
+  .wrap{max-width:960px;margin:0 auto}
+  header{text-align:center;margin-bottom:36px}
+  header .badge{display:inline-flex;align-items:center;gap:8px;
+    background:rgba(62,207,142,.10);border:1px solid rgba(62,207,142,.18);
+    color:var(--green);font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;margin-bottom:14px}
+  header .badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 3px rgba(62,207,142,.18);animation:pulse 2.2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  header h1{font-size:28px;font-weight:800;letter-spacing:.3px}
+  header p{color:var(--sub);font-size:13px;margin-top:10px}
+
+  /* Stats grid */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 14px;text-align:center;transition:transform .2s,background .2s}
+  .stat:hover{background:var(--card-hover);transform:translateY(-2px)}
+  .stat .icon{font-size:22px;margin-bottom:8px;display:block}
+  .stat .num{font-size:32px;font-weight:800;letter-spacing:-.5px}
+  .stat .num.accent{color:var(--accent)}
+  .stat .num.green{color:var(--green)}
+  .stat .num.gold{color:var(--gold)}
+  .stat .num.pink{color:var(--pink)}
   .stat .lbl{font-size:12px;color:var(--sub);margin-top:6px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;margin-bottom:18px}
-  .card h2{font-size:14px;color:var(--sub);font-weight:600;margin-bottom:14px;text-transform:uppercase;letter-spacing:1px}
-  .now{display:flex;align-items:center;gap:16px}
-  .now .cover{width:52px;height:72px;border-radius:8px;background:linear-gradient(135deg,#4f8cff,#3ecf8e);
-    display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
-  .now .info .t{font-size:19px;font-weight:700}
+
+  /* Cards */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px;margin-bottom:18px;transition:background .2s}
+  .card:hover{background:var(--card-hover)}
+  .card h2{font-size:13px;color:var(--sub);font-weight:700;margin-bottom:16px;
+    text-transform:uppercase;letter-spacing:1.2px;display:flex;align-items:center;gap:8px}
+
+  /* Ring progress */
+  .ring-wrap{display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap}
+  .ring{position:relative;width:160px;height:160px;flex-shrink:0}
+  .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+  .ring .track{fill:none;stroke:rgba(255,255,255,0.06);stroke-width:10}
+  .ring .fill{fill:none;stroke:var(--accent);stroke-width:10;stroke-linecap:round;
+    stroke-dasharray:0 440;transition:stroke-dasharray 1.2s cubic-bezier(.22,1,.36,1)}
+  .ring .fill.over{stroke:var(--green)}
+  .ring-text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring-text .big{font-size:28px;font-weight:800}
+  .ring-text .small{font-size:12px;color:var(--sub);margin-top:2px}
+  .ring-info{display:flex;flex-direction:column;gap:10px}
+  .ring-info .item{display:flex;align-items:center;gap:10px;font-size:14px}
+  .ring-info .dot{width:10px;height:10px;border-radius:50%}
+  .ring-info .val{font-weight:700;font-size:16px}
+
+  /* Current book */
+  .now{display:flex;align-items:center;gap:18px}
+  .now .cover{width:56px;height:76px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--green));
+    display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;box-shadow:var(--shadow)}
+  .now .info{flex:1;min-width:0}
+  .now .info .t{font-size:18px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .now .info .m{font-size:13px;color:var(--sub);margin-top:4px}
+  .progress-wrap{margin-top:14px}
+  .progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--sub);margin-bottom:6px}
+  .progress-track{width:100%;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--green));border-radius:4px;width:0;transition:width 1s cubic-bezier(.22,1,.36,1)}
+
+  /* Two col row */
   .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr}}
-  .bars{display:flex;align-items:flex-end;gap:10px;height:120px;padding-top:10px}
-  .bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end}
-  .bar .fill{width:100%;background:linear-gradient(180deg,var(--accent),#2d5bbf);border-radius:6px 6px 0 0;min-height:4px;transition:height .6s}
-  .bar .d{font-size:11px;color:var(--sub)} .bar .v{font-size:11px;color:var(--txt)}
-  ul.books{list-style:none;display:flex;flex-direction:column;gap:8px;max-height:260px;overflow:auto}
-  ul.books li{display:flex;justify-content:space-between;align-items:center;background:var(--card2);
-    border-radius:10px;padding:10px 14px;font-size:14px}
-  ul.books li .when{font-size:11px;color:var(--sub)}
-  .tag{display:inline-block;background:rgba(247,185,85,.15);color:var(--gold);font-size:12px;
-    padding:3px 10px;border-radius:20px;margin:2px}
-  .next .next-title{font-size:18px;font-weight:700;color:var(--green)}
+
+  /* Bars */
+  .bars-wrap{position:relative}
+  .bars{display:flex;align-items:flex-end;gap:10px;height:140px;padding-top:18px}
+  .bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;height:100%;justify-content:flex-end;position:relative}
+  .bar .fill{width:100%;background:linear-gradient(180deg,var(--accent),#2d5bbf);border-radius:6px 6px 0 0;min-height:4px;transition:height .7s cubic-bezier(.22,1,.36,1)}
+  .bar .fill.hit{background:linear-gradient(180deg,var(--green),#2a9d6a)}
+  .bar .v{font-size:11px;color:var(--txt);font-weight:700}
+  .bar .d{font-size:11px;color:var(--sub)}
+  .ref-line{position:absolute;left:0;right:0;border-top:2px dashed rgba(245,183,74,.45);pointer-events:none;display:flex;align-items:center;justify-content:flex-end}
+  .ref-line span{position:absolute;right:0;background:rgba(245,183,74,.12);color:var(--gold);font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;margin-right:-4px}
+
+  /* Next */
+  .next .next-title{font-size:17px;font-weight:700;color:var(--green)}
   .next .next-meta{font-size:12px;color:var(--sub);margin-top:4px}
-  .up{list-style:none;display:flex;flex-direction:column;gap:6px}
-  .up li{display:flex;justify-content:space-between;align-items:center;background:var(--card2);
-    border-radius:8px;padding:8px 12px;font-size:13px}
-  .up li .qn{color:var(--sub);font-size:11px;margin-right:8px}
-  .up li .pg{font-size:11px;color:var(--gold)}
-  .up-h{font-size:11px;color:var(--sub);margin:8px 0 6px;text-transform:uppercase;letter-spacing:1px}
-  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:24px}
+  .up{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:12px}
+  .up li{display:flex;justify-content:space-between;align-items:center;background:var(--surface);
+    border:1px solid var(--line);border-radius:var(--radius-sm);padding:9px 12px;font-size:13px}
+  .up li .qn{color:var(--muted);font-size:11px;margin-right:8px;font-weight:700}
+  .up li .pg{font-size:11px;color:var(--gold);font-weight:600}
+  .up-h{font-size:11px;color:var(--sub);margin:12px 0 6px;text-transform:uppercase;letter-spacing:1px;font-weight:700}
+  .tag{display:inline-block;background:rgba(245,183,74,.12);color:var(--gold);font-size:11px;
+    padding:3px 10px;border-radius:20px;margin:2px;border:1px solid rgba(245,183,74,.18)}
+  .empty-hint{font-size:12px;color:var(--sub);margin-top:10px}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:24px}
+  .timeline::before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:2px;background:linear-gradient(180deg,var(--accent),var(--green));border-radius:1px;opacity:.35}
+  .tl-item{position:relative;margin-bottom:16px}
+  .tl-item::before{content:'';position:absolute;left:-20px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+  .tl-item.done::before{border-color:var(--green);background:var(--green)}
+  .tl-item .tl-title{font-size:14px;font-weight:600}
+  .tl-item .tl-meta{font-size:12px;color:var(--sub);margin-top:2px}
+
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:28px}
   footer a{color:var(--accent);text-decoration:none}
-  .err{color:#ff6b6b;text-align:center;padding:20px}
+  .err{color:var(--red);text-align:center;padding:20px}
+
+  @media(max-width:700px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .row{grid-template-columns:1fr}
+    .ring-wrap{flex-direction:column;gap:20px}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1><span class="dot"></span>微信读书 · 自动阅读状态</h1>
+    <div class="badge">运行中</div>
+    <h1>微信读书 · 自动阅读状态</h1>
     <p id="updated">加载中…</p>
   </header>
 
-  <div class="grid">
-    <div class="stat"><div class="num" id="s-days">–</div><div class="lbl">累计运行天数</div></div>
-    <div class="stat"><div class="num green" id="s-hours">–</div><div class="lbl">累计阅读时长(h)</div></div>
-    <div class="stat"><div class="num gold" id="s-finished">–</div><div class="lbl">已读完书籍</div></div>
-    <div class="stat"><div class="num" id="s-target">–</div><div class="lbl">每日目标(min)</div></div>
+  <div class="stats">
+    <div class="stat"><span class="icon">📅</span><div class="num accent" id="s-days">–</div><div class="lbl">累计运行天数</div></div>
+    <div class="stat"><span class="icon">⏱️</span><div class="num green" id="s-hours">–</div><div class="lbl">累计阅读时长(h)</div></div>
+    <div class="stat"><span class="icon">🏆</span><div class="num gold" id="s-finished">–</div><div class="lbl">已读完书籍</div></div>
+    <div class="stat"><span class="icon">🎯</span><div class="num pink" id="s-target">–</div><div class="lbl">每日目标(min)</div></div>
   </div>
 
   <div class="card">
-    <h2>📖 当前在读</h2>
-    <div class="now">
-      <div class="cover">📚</div>
-      <div class="info">
-        <div class="t" id="cur-title">–</div>
-        <div class="m" id="cur-meta">–</div>
+    <h2>🎯 今日目标完成度</h2>
+    <div class="ring-wrap">
+      <div class="ring">
+        <svg viewBox="0 0 160 160">
+          <circle class="track" cx="80" cy="80" r="70"/>
+          <circle class="fill" id="ring-fill" cx="80" cy="80" r="70"/>
+        </svg>
+        <div class="ring-text">
+          <div class="big" id="ring-pct">0%</div>
+          <div class="small">今日进度</div>
+        </div>
+      </div>
+      <div class="ring-info">
+        <div class="item"><span class="dot" style="background:var(--accent)"></span><span>已读 <span class="val" id="ring-done">0</span> min</span></div>
+        <div class="item"><span class="dot" style="background:var(--sub)"></span><span>目标 <span class="val" id="ring-goal">570</span> min</span></div>
+        <div class="item"><span class="dot" style="background:var(--green)"></span><span>剩余 <span class="val" id="ring-left">570</span> min</span></div>
       </div>
     </div>
   </div>
 
   <div class="row">
     <div class="card">
-      <h2>📊 近日阅读时长(分钟)</h2>
-      <div class="bars" id="bars"></div>
+      <h2>📖 当前在读</h2>
+      <div class="now">
+        <div class="cover">📚</div>
+        <div class="info">
+          <div class="t" id="cur-title">–</div>
+          <div class="m" id="cur-meta">–</div>
+        </div>
+      </div>
+      <div class="progress-wrap" id="cur-progress-wrap" style="display:none">
+        <div class="progress-label"><span>阅读进度</span><span id="cur-progress-val">0%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="cur-progress-fill"></div></div>
+      </div>
     </div>
     <div class="card">
       <h2>⏭️ 下一本预计阅读</h2>
@@ -96,15 +182,23 @@
         <div class="next-title" id="next-title">–</div>
         <div class="next-meta" id="next-meta"></div>
       </div>
-      <div id="upcoming" style="margin-top:12px"></div>
-      <p id="next-hint" style="font-size:11px;color:var(--sub);margin-top:10px"></p>
+      <div id="upcoming"></div>
+      <p class="empty-hint" id="next-hint"></p>
       <div id="excluded" style="margin-top:12px"></div>
     </div>
   </div>
 
   <div class="card">
+    <h2>📊 近日阅读时长(分钟)</h2>
+    <div class="bars-wrap">
+      <div class="ref-line" id="ref-line" style="display:none"><span>目标 570</span></div>
+      <div class="bars" id="bars"></div>
+    </div>
+  </div>
+
+  <div class="card">
     <h2>✅ 已读完书籍</h2>
-    <ul class="books" id="finished-list"></ul>
+    <div class="timeline" id="finished-list"></div>
   </div>
 
   <footer>
@@ -114,11 +208,22 @@
 </div>
 
 <script>
-const fmtTime = iso => { if(!iso) return '未知'; const d=new Date(iso);
+const fmtTime = iso => {
+  if(!iso) return '未知';
+  const d = new Date(iso);
   return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')+
-  ' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); };
-const fmtDate = iso => { if(!iso) return ''; const d=new Date(iso);
-  return (d.getMonth()+1)+'/'+d.getDate(); };
+    ' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+};
+const fmtDate = iso => {
+  if(!iso) return '';
+  const d = new Date(iso);
+  return (d.getMonth()+1)+'/'+d.getDate();
+};
+const fmtDateFull = iso => {
+  if(!iso) return '';
+  const d = new Date(iso);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+};
 
 async function load(){
   try{
@@ -127,66 +232,116 @@ async function load(){
     const d = await res.json();
     render(d);
   }catch(e){
-    document.getElementById('updated').innerHTML =
-      '<span class="err">数据加载失败：'+e.message+'</span>';
+    document.getElementById('updated').innerHTML = '<span class="err">数据加载失败：'+e.message+'</span>';
   }
 }
 
 function render(d){
   document.getElementById('updated').textContent = '数据更新于 ' + fmtTime(d.updatedAt);
-  const st = d.stats||{};
+  const st = d.stats || {};
   document.getElementById('s-days').textContent = st.runDays ?? '–';
   document.getElementById('s-hours').textContent = st.totalHours ?? '–';
   document.getElementById('s-finished').textContent = st.finishedCount ?? '–';
   document.getElementById('s-target').textContent = st.dailyTargetMinutes ?? '–';
 
+  // Ring
+  const target = st.dailyTargetMinutes || 570;
+  const dm = d.dailyMinutes || [];
+  const today = dm.length ? dm[dm.length-1].minutes : 0;
+  const pct = Math.min(100, Math.round((today / target) * 100));
+  const left = Math.max(0, target - today);
+  const circumference = 2 * Math.PI * 70; // r=70
+  const offset = circumference - (pct / 100) * circumference;
+
+  document.getElementById('ring-pct').textContent = pct + '%';
+  document.getElementById('ring-done').textContent = today;
+  document.getElementById('ring-goal').textContent = target;
+  document.getElementById('ring-left').textContent = left;
+  const ringFill = document.getElementById('ring-fill');
+  ringFill.style.strokeDasharray = circumference + ' ' + circumference;
+  ringFill.style.strokeDashoffset = circumference; // start at 0
+  if(pct >= 100) ringFill.classList.add('over');
+  requestAnimationFrame(() => {
+    ringFill.style.strokeDashoffset = offset;
+  });
+
+  // Current book
   const cb = d.currentBook;
   document.getElementById('cur-title').textContent = cb ? cb.title : '暂无';
   document.getElementById('cur-meta').textContent = cb
-    ? (cb.source?('来源：'+cb.source+' · '):'')+'选中于 '+fmtTime(cb.selectedAt) : '';
+    ? (cb.source ? ('来源：'+cb.source+' · ') : '') + '选中于 '+fmtTime(cb.selectedAt) : '';
+  if(cb && cb.progress != null){
+    document.getElementById('cur-progress-wrap').style.display = '';
+    document.getElementById('cur-progress-val').textContent = cb.progress + '%';
+    requestAnimationFrame(() => {
+      document.getElementById('cur-progress-fill').style.width = Math.min(100, cb.progress) + '%';
+    });
+  } else {
+    document.getElementById('cur-progress-wrap').style.display = 'none';
+  }
 
-  // 下一本预计阅读
+  // Next book
   const nb = d.nextBook;
   document.getElementById('next-title').textContent = nb ? nb.title : '暂无可读新书';
   document.getElementById('next-meta').textContent = nb
-    ? [nb.author, (nb.progress!=null?'已读 '+nb.progress+'%':'')].filter(Boolean).join(' · ') : '';
+    ? [nb.author, (nb.progress != null ? '已读 '+nb.progress+'%' : '')].filter(Boolean).join(' · ') : '';
 
   const up = document.getElementById('upcoming');
-  const list = (d.upcomingBooks||[]).slice(1); // 首本已作为“下一本”展示
+  const list = (d.upcomingBooks || []).slice(1);
   up.innerHTML = list.length
-    ? '<div class="up-h">后续候选</div><ul class="up">' + list.map((b,i)=>
+    ? '<div class="up-h">后续候选</div><ul class="up">' + list.map((b,i) =>
         '<li><span><span class="qn">'+(i+2)+'</span>'+b.title+(b.author?' · '+b.author:'')+'</span>'+
         '<span class="pg">'+(b.progress!=null?b.progress+'%':'')+'</span></li>').join('') + '</ul>'
     : '';
   document.getElementById('next-hint').textContent = d.nextSourceHint || '';
 
   const exc = document.getElementById('excluded');
-  exc.innerHTML = (d.excludedBooks&&d.excludedBooks.length)
-    ? '排除：' + d.excludedBooks.map(b=>'<span class="tag">'+b+'</span>').join('')
-    : '<span style="color:var(--sub);font-size:13px">无排除书籍</span>';
+  exc.innerHTML = (d.excludedBooks && d.excludedBooks.length)
+    ? '排除：' + d.excludedBooks.map(b => '<span class="tag">'+b+'</span>').join('')
+    : '<span style="color:var(--sub);font-size:12px">无排除书籍</span>';
 
-  // bars
+  // Bars with reference line
+  const barsWrap = document.querySelector('.bars-wrap');
   const bars = document.getElementById('bars');
-  const dm = d.dailyMinutes||[];
-  const max = Math.max(1, ...dm.map(x=>x.minutes));
-  bars.innerHTML = dm.map(x=>{
-    const h = Math.round(x.minutes/max*100);
+  const max = Math.max(target, ...dm.map(x => x.minutes));
+  const refLine = document.getElementById('ref-line');
+  if(target > 0 && max >= target){
+    refLine.style.display = 'flex';
+    const refPct = (target / max) * 100;
+    refLine.style.bottom = refPct + '%';
+  } else {
+    refLine.style.display = 'none';
+  }
+  bars.innerHTML = dm.map(x => {
+    const h = Math.round((x.minutes / max) * 100);
+    const hit = x.minutes >= target;
     return '<div class="bar"><span class="v">'+x.minutes+'</span>'+
-      '<div class="fill" style="height:'+h+'%"></div>'+
+      '<div class="fill '+(hit?'hit':'')+'" style="height:'+h+'%"></div>'+
       '<span class="d">'+fmtDate(x.date)+'</span></div>';
   }).join('');
 
-  // finished list
-  const fl = document.getElementById('finished-list');
-  const fb = (d.finishedBooks||[]).slice().reverse();
-  fl.innerHTML = fb.length ? fb.map(b=>
-    '<li><span>'+b.title+(b.author?' · '+b.author:'')+'</span>'+
-    '<span class="when">'+fmtTime(b.finishedAt)+'</span></li>').join('')
-    : '<li>暂无</li>';
+  // Timeline
+  const tl = document.getElementById('finished-list');
+  const fb = (d.finishedBooks || []).slice().reverse();
+  if(!fb.length){
+    tl.innerHTML = '<div style="color:var(--sub);font-size:14px">暂无</div>';
+  } else {
+    // Deduplicate by title for cleaner timeline, keep latest finish
+    const seen = new Set();
+    const uniq = [];
+    for(const b of fb){
+      if(!seen.has(b.title)){ seen.add(b.title); uniq.push(b); }
+    }
+    tl.innerHTML = uniq.map((b, i) =>
+      '<div class="tl-item '+(i===0?'':'done')+'">'+
+      '<div class="tl-title">'+b.title+(b.author?' <span style="color:var(--sub);font-weight:400">· '+b.author+'</span>':'')+'</div>'+
+      '<div class="tl-meta">'+fmtDateFull(b.finishedAt)+'</div></div>'
+    ).join('');
+  }
 }
 
 load();
-setInterval(load, 5*60*1000); // 每5分钟自动刷新
+setInterval(load, 5*60*1000);
 </script>
 </body>
 </html>
