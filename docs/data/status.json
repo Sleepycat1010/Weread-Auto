@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-06-24T23:30:02.738Z",
+  "updatedAt": "2026-06-25T00:00:02.390Z",
   "currentBook": {
     "title": "犹太人四千年（全两册）",
     "bookId": "910323a0726c87629106646",
-    "selectedAt": "2026-06-24T06:57:47.725Z",
+    "selectedAt": "2026-06-24T23:57:31.101Z",
     "source": "我的书架"
   },
   "nextBook": {
@@ -34,22 +34,22 @@
     }
   ],
   "nextLeaderboard": "微信读书用户近期热读的出版书",
-  "nextSourceHint": "我的书架（按最近阅读 + 排除已读/书单推算）",
+  "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 1,
-    "totalMinutes": 84,
-    "totalHours": 1.4,
-    "finishedCount": 10,
+    "totalMinutes": 114,
+    "totalHours": 1.9,
+    "finishedCount": 11,
     "finishedUniqueCount": 3,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 84,
+    "avgMinutes": 114,
     "lastRunAt": "2026-06-16T22:00:35.700Z"
   },
   "dailyMinutes": [
     {
       "date": "2026-06-25",
-      "minutes": 84
+      "minutes": 114
     }
   ],
   "finishedBooks": [
@@ -102,6 +102,11 @@
       "title": "青山",
       "author": null,
       "finishedAt": "2026-06-24T06:57:42.966Z"
+    },
+    {
+      "title": "带着农场混异界",
+      "author": null,
+      "finishedAt": "2026-06-24T23:57:25.173Z"
     }
   ],
   "excludedBooks": [
