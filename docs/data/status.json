@@ -1,17 +1,17 @@
 {
-  "updatedAt": "2026-07-10T08:00:03.073Z",
-  "currentBook": {
-    "title": "犹太人四千年（全两册）",
-    "bookId": "910323a0726c87629106646",
-    "selectedAt": "2026-06-24T23:57:31.101Z",
-    "source": "我的书架"
-  },
+  "updatedAt": "2026-07-10T08:30:02.945Z",
+  "currentBook": null,
   "nextBook": {
-    "title": "剑来（1-54 完结精校版）",
-    "author": "烽火戏诸侯",
-    "progress": 0
+    "title": "犹太人四千年（全两册）",
+    "author": "保罗·约翰逊",
+    "progress": 99
   },
   "upcomingBooks": [
+    {
+      "title": "犹太人四千年（全两册）",
+      "author": "保罗·约翰逊",
+      "progress": 99
+    },
     {
       "title": "剑来（1-54 完结精校版）",
       "author": "烽火戏诸侯",
@@ -26,24 +26,19 @@
       "title": "二号首长（全三册）",
       "author": "黄晓阳",
       "progress": 3
-    },
-    {
-      "title": "宋慈洗冤笔记 第1-2季（已更新第二季第三册）",
-      "author": "巫童",
-      "progress": 0
     }
   ],
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（按最近阅读 + 排除已读/书单推算）",
   "stats": {
     "runDays": 15,
-    "totalMinutes": 7801,
-    "totalHours": 130,
-    "finishedCount": 11,
-    "finishedUniqueCount": 3,
+    "totalMinutes": 7810,
+    "totalHours": 130.2,
+    "finishedCount": 12,
+    "finishedUniqueCount": 4,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 520,
+    "avgMinutes": 521,
     "lastRunAt": "2026-06-16T22:00:35.700Z"
   },
   "dailyMinutes": [
@@ -105,7 +100,7 @@
     },
     {
       "date": "2026-07-10",
-      "minutes": 546
+      "minutes": 555
     }
   ],
   "finishedBooks": [
@@ -163,6 +158,11 @@
       "title": "带着农场混异界",
       "author": null,
       "finishedAt": "2026-06-24T23:57:25.173Z"
+    },
+    {
+      "title": "犹太人四千年（全两册）",
+      "author": null,
+      "finishedAt": "2026-07-10T08:02:56.919Z"
     }
   ],
   "excludedBooks": [
