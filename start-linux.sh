@@ -17,7 +17,7 @@ TARGET_DURATION=570     # 每日目标时长（分钟）
 # ---------- 清场函数 ----------
 cleanup_all() {
     log_daemon "清场：杀掉所有残留 Chrome/Chromedriver 进程..."
-    pkill -f 'weread-challenge.js' 2>/dev/null || true
+    # 注意：不杀 weread-challenge.js，那由 kill_existing() 负责
     pkill -9 chromedriver 2>/dev/null || true
     # 杀掉所有 headless Chrome 实例（包括残留的 zygote/renderer/gpu 子进程）
     pkill -9 -f 'chrome.*headless' 2>/dev/null || true
@@ -50,7 +50,12 @@ kill_existing() {
     fi
     pkill -f "weread-challenge.js run" 2>/dev/null || true
     pkill -f "chromedriver" 2>/dev/null || true
-    sleep 2
+    # 杀掉前一天残留的 headless Chrome 主进程及子进程
+    pkill -9 -f 'chrome.*headless' 2>/dev/null || true
+    sleep 1
+    # 清理残留的临时 user-data-dir
+    rm -rf /tmp/org.chromium.Chromium.scoped_dir.* 2>/dev/null || true
+    sleep 1
     log_daemon "清理完成"
 }
 
