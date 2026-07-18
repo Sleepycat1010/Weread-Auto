@@ -14,6 +14,19 @@ HEARTBEAT_INTERVAL=300  # 每5分钟检查一次
 MAX_RESTARTS=5          # 最多连续重启5次
 TARGET_DURATION=570     # 每日目标时长（分钟）
 
+# ---------- 清场函数 ----------
+cleanup_all() {
+    log_daemon "清场：杀掉所有残留 Chrome/Chromedriver 进程..."
+    pkill -f 'weread-challenge.js' 2>/dev/null || true
+    pkill -9 chromedriver 2>/dev/null || true
+    # 杀掉所有 headless Chrome 实例（包括残留的 zygote/renderer/gpu 子进程）
+    pkill -9 -f 'chrome.*headless' 2>/dev/null || true
+    sleep 1
+    # 清理残留的临时 user-data-dir
+    rm -rf /tmp/org.chromium.Chromium.scoped_dir.* 2>/dev/null || true
+    log_daemon "清场完成"
+}
+
 # ---------- 工具函数 ----------
 log_daemon() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] [daemon] $1" | tee -a "$DAEMON_LOG"
@@ -129,11 +142,15 @@ is_alive() {
 export WEREAD_BROWSER="chrome"
 export WEREAD_SELECTION="-1"
 export WEREAD_SCREENSHOT="false"
-export WEREAD_SPEED="Normal"
+export WEREAD_SPEED="slow"
 export WEREAD_DATA_DIR="$ROOT/weread-challenge/.weread"
 export DEFAULT_BOOK_URL="https://weread.qq.com/web/reader/910323a0726c87629106646"
 export EMAIL_PORT="465"
 export ENABLE_EMAIL="false"
+# 硬编码Chrome二进制路径，避免selenium/puppeteer找到旧版本缓存
+export CHROME_PATH="/opt/google/chrome/chrome"
+export PUPPETEER_EXECUTABLE_PATH="/opt/google/chrome/chrome"
+export GOOGLE_CHROME_BIN="/opt/google/chrome/chrome"
 
 mkdir -p "$WEREAD_DATA_DIR"
 
@@ -197,7 +214,7 @@ init_progress
 log_daemon "===== 守护启动 ====="
 
 # 先尝试启动
-start_reader || { log_daemon "无需启动，退出"; exit 0; }
+start_reader || { log_daemon "无需启动，退出"; cleanup_all; exit 0; }
 
 # ---------- 守护循环 ----------
 restart_count=0
@@ -208,30 +225,38 @@ while true; do
     if ! is_alive; then
         # 进程退出了：先 finalize 本轮，再重启
         finalize_round
+        # 检查最近日志是否是登录态失效导致退出，若是则停止守护避免无限重启
+        if tail -50 "$DAEMON_LOG" 2>/dev/null | grep -q "LOGIN_INVALID"; then
+            log_daemon "❌ 检测到登录态失效（LOGIN_INVALID），停止守护。请重新扫码登录后再启动。"
+            cleanup_all
+            rm -f "$PID_FILE"
+            exit 2
+        fi
         restart_count=$((restart_count + 1))
         if [ "$restart_count" -gt "$MAX_RESTARTS" ]; then
             log_daemon "连续重启 $MAX_RESTARTS 次仍失败，放弃守护。"
+            cleanup_all
             rm -f "$PID_FILE"
             exit 1
         fi
         log_daemon "检测到阅读器进程退出（第 $restart_count 次），自动重启..."
-        start_reader || { log_daemon "剩余时长为0，守护结束"; exit 0; }
+        start_reader || { log_daemon "剩余时长为0，守护结束"; cleanup_all; exit 0; }
         last_min=""
     else
         # 进程还在跑：检查是否卡住
-        local current_min
         current_min=$(get_latest_minute)
         if [ -n "$current_min" ] && [ "$current_min" = "$last_min" ]; then
             log_daemon "警告：阅读进度卡住（minute=$current_min），尝试重启..."
             kill_existing
             finalize_round
-            start_reader || { log_daemon "剩余时长为0，守护结束"; exit 0; }
+            cleanup_all
+            sleep 2
+            start_reader || { log_daemon "剩余时长为0，守护结束"; cleanup_all; exit 0; }
             restart_count=$((restart_count + 1))
             last_min=""
         else
             last_min="$current_min"
             restart_count=0
-            local remaining
             remaining=$(get_remaining)
             log_daemon "阅读器正常 (PID=$(cat "$PID_FILE"), minute=${current_min:-N/A}, 剩余${remaining}分钟)"
         fi
