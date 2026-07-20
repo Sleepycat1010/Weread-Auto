@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T22:00:02.195Z",
+  "updatedAt": "2026-07-20T22:30:03.035Z",
   "currentBook": null,
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -13,6 +13,11 @@
       "progress": 99
     },
     {
+      "title": "全球高武",
+      "author": "老鹰吃小鸡",
+      "progress": 1
+    },
+    {
       "title": "剑来（1-54 完结精校版）",
       "author": "烽火戏诸侯",
       "progress": 0
@@ -21,24 +26,19 @@
       "title": "明朝那些事儿（全集）",
       "author": "当年明月",
       "progress": 95
-    },
-    {
-      "title": "二号首长（全三册）",
-      "author": "黄晓阳",
-      "progress": 3
     }
   ],
   "nextLeaderboard": "微信读书用户近期热读的出版书",
-  "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
+  "nextSourceHint": "我的书架（按最近阅读 + 排除已读/书单推算）",
   "stats": {
-    "runDays": 23,
-    "totalMinutes": 11841,
-    "totalHours": 197.4,
+    "runDays": 24,
+    "totalMinutes": 11864,
+    "totalHours": 197.7,
     "finishedCount": 12,
     "finishedUniqueCount": 4,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 515,
+    "avgMinutes": 494,
     "lastRunAt": "2026-06-16T22:00:35.700Z"
   },
   "dailyMinutes": [
@@ -133,6 +133,10 @@
     {
       "date": "2026-07-20",
       "minutes": 570
+    },
+    {
+      "date": "2026-07-21",
+      "minutes": 23
     }
   ],
   "finishedBooks": [
