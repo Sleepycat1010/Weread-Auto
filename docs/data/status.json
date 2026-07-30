@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30T22:00:01.780Z",
+  "updatedAt": "2026-07-30T22:30:03.525Z",
   "currentBook": null,
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -15,7 +15,7 @@
     {
       "title": "全球高武",
       "author": "老鹰吃小鸡",
-      "progress": 8
+      "progress": 9
     },
     {
       "title": "剑来（1-54 完结精校版）",
@@ -29,16 +29,16 @@
     }
   ],
   "nextLeaderboard": "微信读书用户近期热读的出版书",
-  "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
+  "nextSourceHint": "我的书架（按最近阅读 + 排除已读/书单推算）",
   "stats": {
-    "runDays": 33,
-    "totalMinutes": 17540,
-    "totalHours": 292.3,
+    "runDays": 34,
+    "totalMinutes": 17568,
+    "totalHours": 292.8,
     "finishedCount": 12,
     "finishedUniqueCount": 4,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 532,
+    "avgMinutes": 517,
     "lastRunAt": "2026-06-16T22:00:35.700Z"
   },
   "dailyMinutes": [
@@ -173,6 +173,10 @@
     {
       "date": "2026-07-30",
       "minutes": 570
+    },
+    {
+      "date": "2026-07-31",
+      "minutes": 28
     }
   ],
   "finishedBooks": [
