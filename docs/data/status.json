@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T00:30:02.367Z",
+  "updatedAt": "2026-09-06T01:00:01.642Z",
   "currentBook": null,
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -32,8 +32,8 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 71,
-    "totalMinutes": 38755,
-    "totalHours": 645.9,
+    "totalMinutes": 38785,
+    "totalHours": 646.4,
     "finishedCount": 12,
     "finishedUniqueCount": 4,
     "currentRunCount": 3,
@@ -324,7 +324,7 @@
     },
     {
       "date": "2026-09-06",
-      "minutes": 145
+      "minutes": 175
     }
   ],
   "finishedBooks": [
