@@ -1,21 +1,21 @@
 {
-  "updatedAt": "2026-09-06T08:00:03.854Z",
+  "updatedAt": "2026-09-06T08:30:03.030Z",
   "currentBook": null,
   "nextBook": {
-    "title": "犹太人四千年（全两册）",
-    "author": "保罗·约翰逊",
-    "progress": 99
+    "title": "全球高武",
+    "author": "老鹰吃小鸡",
+    "progress": 47
   },
   "upcomingBooks": [
-    {
-      "title": "犹太人四千年（全两册）",
-      "author": "保罗·约翰逊",
-      "progress": 99
-    },
     {
       "title": "全球高武",
       "author": "老鹰吃小鸡",
       "progress": 47
+    },
+    {
+      "title": "犹太人四千年（全两册）",
+      "author": "保罗·约翰逊",
+      "progress": 99
     },
     {
       "title": "剑来（1-54 完结精校版）",
