@@ -149,7 +149,19 @@ export WEREAD_SELECTION="-1"
 export WEREAD_SCREENSHOT="false"
 export WEREAD_SPEED="slow"
 export WEREAD_DATA_DIR="$ROOT/weread-challenge/.weread"
-export DEFAULT_BOOK_URL="https://weread.qq.com/web/reader/910323a0726c87629106646"
+# DEFAULT_BOOK_URL 仅作自动选书失败时的兑底（B 方案：-1 分支会先自动选书）。
+# 兑底书：《剑来（1-54 完结精校版）》，原 910323a... 是《犹太人四千年》99% 卡死书。
+export DEFAULT_BOOK_URL="https://weread.qq.com/web/reader/8e5326b07153adcf8e53d42"
+# 修复(2026-09-09)：若换书状态中已有 currentBook（上次读完/换书后写入），
+# 则优先读当前在读的那本，避免永远读死同一本默认书
+ROTATION_STATE="$ROOT/weread-challenge/.weread/book-rotation-state.json"
+CUR_BOOK_URL=$(python3 -c "import json; d=json.load(open('$ROTATION_STATE')); print(((d.get('currentBook') or {}).get('url')) or '')" 2>/dev/null || true)
+if [ -n "$CUR_BOOK_URL" ]; then
+    export DEFAULT_BOOK_URL="$CUR_BOOK_URL"
+    echo "  Book URL:   $DEFAULT_BOOK_URL (from book-rotation currentBook)"
+else
+    echo "  Book URL:   $DEFAULT_BOOK_URL (fallback default)"
+fi
 export EMAIL_PORT="465"
 export ENABLE_EMAIL="false"
 # 硬编码Chrome二进制路径，避免selenium/puppeteer找到旧版本缓存
