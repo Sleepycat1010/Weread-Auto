@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-09-09T14:00:03.593Z",
+  "updatedAt": "2026-09-09T14:30:03.435Z",
   "currentBook": {
-    "title": "剑来（1-54 完结精校版）",
-    "bookId": "31131759",
-    "selectedAt": "2026-09-09T21:47:07.214889+08:00",
-    "source": "manual-debug-fix"
+    "title": "全球高武",
+    "bookId": "22237441",
+    "selectedAt": "2026-09-09T14:18:18.545Z",
+    "source": "shelf-auto-select"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -18,9 +18,9 @@
       "progress": 99
     },
     {
-      "title": "全球高武",
-      "author": "老鹰吃小鸡",
-      "progress": 47
+      "title": "剑来（1-54 完结精校版）",
+      "author": "烽火戏诸侯",
+      "progress": 0
     },
     {
       "title": "明朝那些事儿（全集）",
