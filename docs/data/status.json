@@ -1,6 +1,11 @@
 {
-  "updatedAt": "2026-09-09T13:30:02.250Z",
-  "currentBook": null,
+  "updatedAt": "2026-09-09T14:00:03.593Z",
+  "currentBook": {
+    "title": "剑来（1-54 完结精校版）",
+    "bookId": "31131759",
+    "selectedAt": "2026-09-09T21:47:07.214889+08:00",
+    "source": "manual-debug-fix"
+  },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
     "author": "保罗·约翰逊",
@@ -18,18 +23,18 @@
       "progress": 47
     },
     {
-      "title": "剑来（1-54 完结精校版）",
-      "author": "烽火戏诸侯",
-      "progress": 0
-    },
-    {
       "title": "明朝那些事儿（全集）",
       "author": "当年明月",
       "progress": 95
+    },
+    {
+      "title": "二号首长（全三册）",
+      "author": "黄晓阳",
+      "progress": 3
     }
   ],
   "nextLeaderboard": "微信读书用户近期热读的出版书",
-  "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
+  "nextSourceHint": "我的书架（按最近阅读 + 排除已读/书单推算）",
   "stats": {
     "runDays": 74,
     "totalMinutes": 40888,
@@ -39,7 +44,7 @@
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
     "avgMinutes": 553,
-    "lastRunAt": "2026-06-16T22:00:35.700Z"
+    "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
     {
