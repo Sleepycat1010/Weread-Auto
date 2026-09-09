@@ -22,15 +22,34 @@ function safeJSON(file) { const raw = safeRead(file); if (!raw) return null; try
 
 function cleanTitle(t) { if (!t) return null; return String(t).split(' - ')[0].trim(); }
 
-// 从 cron.log 解析每天阅读时长（取每日最大 Reading minute）
+// 从 cron.log 解析每天阅读时长：检测多轮 run（进程重启）并累加每轮最终分钟数
+// 策略：按顺序扫描，当分钟数从大值跳回小值(或从0重新开始)时视为新run，累加每轮峰值
 function parseReadingByDate(logText) {
   const byDate = {};
   if (!logText) return byDate;
   const re = /\[(\d{4}-\d{2}-\d{2})[^\]]*\]:\s*Reading minute:\s*(\d+)/g;
   let m;
+  const perDate = {};
   while ((m = re.exec(logText)) !== null) {
     const d = m[1], min = parseInt(m[2], 10);
-    if (!byDate[d] || min > byDate[d]) byDate[d] = min;
+    if (!perDate[d]) perDate[d] = [];
+    perDate[d].push(min);
+  }
+  for (const d of Object.keys(perDate)) {
+    const mins = perDate[d];
+    let total = 0;
+    let runPeak = 0;
+    for (let i = 0; i < mins.length; i++) {
+      const cur = mins[i];
+      const next = mins[i + 1];
+      if (cur > runPeak) runPeak = cur;
+      // 当分钟数突然下降（重启新一轮）或到达数组末尾时，结算本轮
+      if (next === undefined || next < cur - 30) {
+        total += runPeak;
+        runPeak = 0;
+      }
+    }
+    byDate[d] = Math.min(total, 600); // 上限600分钟防异常
   }
   return byDate;
 }
