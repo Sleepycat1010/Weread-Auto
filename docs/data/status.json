@@ -1,6 +1,11 @@
 {
-  "updatedAt": "2026-09-09T16:00:01.794Z",
-  "currentBook": null,
+  "updatedAt": "2026-09-10T04:00:01.973Z",
+  "currentBook": {
+    "title": "明朝那些事儿（全集）",
+    "bookId": "822995",
+    "selectedAt": "2026-09-09T22:00:27.146Z",
+    "source": "shelf-auto-select"
+  },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
     "author": "保罗·约翰逊",
@@ -18,11 +23,6 @@
       "progress": 0
     },
     {
-      "title": "明朝那些事儿（全集）",
-      "author": "当年明月",
-      "progress": 95
-    },
-    {
       "title": "二号首长（全三册）",
       "author": "黄晓阳",
       "progress": 3
@@ -31,14 +31,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 74,
-    "totalMinutes": 40888,
-    "totalHours": 681.5,
+    "runDays": 75,
+    "totalMinutes": 41246,
+    "totalHours": 687.4,
     "finishedCount": 12,
     "finishedUniqueCount": 4,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 553,
+    "avgMinutes": 550,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -337,6 +337,10 @@
     {
       "date": "2026-09-09",
       "minutes": 570
+    },
+    {
+      "date": "2026-09-10",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
