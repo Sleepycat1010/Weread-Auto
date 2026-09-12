@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-11T16:00:02.521Z",
+  "updatedAt": "2026-09-12T04:00:02.187Z",
   "currentBook": {
     "title": "明朝那些事儿（全集）",
     "bookId": "822995",
@@ -31,14 +31,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 76,
-    "totalMinutes": 42028,
-    "totalHours": 700.5,
+    "runDays": 77,
+    "totalMinutes": 42386,
+    "totalHours": 706.4,
     "finishedCount": 12,
     "finishedUniqueCount": 4,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 553,
+    "avgMinutes": 550,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -345,6 +345,10 @@
     {
       "date": "2026-09-11",
       "minutes": 570
+    },
+    {
+      "date": "2026-09-12",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
