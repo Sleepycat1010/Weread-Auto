@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-28T04:00:02.382Z",
+  "updatedAt": "2026-09-28T16:00:02.632Z",
   "currentBook": {
     "title": "二号首长（全三册）",
     "bookId": "3300204305",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 93,
-    "totalMinutes": 51501,
-    "totalHours": 858.4,
+    "totalMinutes": 51711,
+    "totalHours": 861.9,
     "finishedCount": 13,
     "finishedUniqueCount": 5,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 554,
+    "avgMinutes": 556,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -407,7 +407,7 @@
     },
     {
       "date": "2026-09-28",
-      "minutes": 359
+      "minutes": 569
     }
   ],
   "finishedBooks": [
