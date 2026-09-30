@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-09-29T16:00:02.338Z",
+  "updatedAt": "2026-09-30T04:00:02.410Z",
   "currentBook": {
-    "title": "二号首长（全三册）",
-    "bookId": "3300204305",
-    "selectedAt": "2026-09-19T22:06:34.296Z",
+    "title": "剑来",
+    "bookId": "22261199",
+    "selectedAt": "2026-09-29T22:06:46.973Z",
     "source": "shelf-auto-select"
   },
   "nextBook": {
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 94,
-    "totalMinutes": 52280,
-    "totalHours": 871.3,
-    "finishedCount": 13,
-    "finishedUniqueCount": 5,
+    "runDays": 95,
+    "totalMinutes": 52638,
+    "totalHours": 877.3,
+    "finishedCount": 14,
+    "finishedUniqueCount": 6,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 556,
+    "avgMinutes": 554,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -412,6 +412,10 @@
     {
       "date": "2026-09-29",
       "minutes": 569
+    },
+    {
+      "date": "2026-09-30",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
@@ -479,6 +483,11 @@
       "title": "明朝那些事儿（全集）",
       "author": null,
       "finishedAt": "2026-09-19T22:06:32.799Z"
+    },
+    {
+      "title": "二号首长（全三册）",
+      "author": null,
+      "finishedAt": "2026-09-29T22:06:45.451Z"
     }
   ],
   "excludedBooks": [
