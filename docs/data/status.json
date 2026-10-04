@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T04:00:02.292Z",
+  "updatedAt": "2026-10-04T16:00:02.446Z",
   "currentBook": {
     "title": "剑来",
     "bookId": "22261199",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 99,
-    "totalMinutes": 54914,
-    "totalHours": 915.2,
+    "totalMinutes": 55125,
+    "totalHours": 918.8,
     "finishedCount": 14,
     "finishedUniqueCount": 6,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 555,
+    "avgMinutes": 557,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -431,7 +431,7 @@
     },
     {
       "date": "2026-10-04",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
