@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-08T16:00:01.885Z",
+  "updatedAt": "2026-10-09T04:00:02.241Z",
   "currentBook": {
     "title": "剑来",
     "bookId": "22261199",
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 103,
-    "totalMinutes": 57402,
-    "totalHours": 956.7,
+    "runDays": 104,
+    "totalMinutes": 57760,
+    "totalHours": 962.7,
     "finishedCount": 14,
     "finishedUniqueCount": 6,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 557,
+    "avgMinutes": 555,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -448,6 +448,10 @@
     {
       "date": "2026-10-08",
       "minutes": 569
+    },
+    {
+      "date": "2026-10-09",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
