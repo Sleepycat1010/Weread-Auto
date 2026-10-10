@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T04:00:02.013Z",
+  "updatedAt": "2026-10-10T16:00:02.382Z",
   "currentBook": {
     "title": "遮天（同名国漫原著）",
     "bookId": "475863",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 105,
-    "totalMinutes": 58329,
-    "totalHours": 972.2,
+    "totalMinutes": 58540,
+    "totalHours": 975.7,
     "finishedCount": 15,
     "finishedUniqueCount": 7,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 556,
+    "avgMinutes": 558,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -455,7 +455,7 @@
     },
     {
       "date": "2026-10-10",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
