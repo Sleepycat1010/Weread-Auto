@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-10-19T16:00:02.407Z",
+  "updatedAt": "2026-10-20T04:00:02.538Z",
   "currentBook": {
-    "title": "遮天（同名国漫原著）",
-    "bookId": "475863",
-    "selectedAt": "2026-10-09T22:07:02.589Z",
+    "title": "大医·日出篇",
+    "bookId": "3300050599",
+    "selectedAt": "2026-10-19T22:07:20.219Z",
     "source": "shelf-auto-select"
   },
   "nextBook": {
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 114,
-    "totalMinutes": 63662,
-    "totalHours": 1061,
-    "finishedCount": 15,
-    "finishedUniqueCount": 7,
+    "runDays": 115,
+    "totalMinutes": 64020,
+    "totalHours": 1067,
+    "finishedCount": 16,
+    "finishedUniqueCount": 8,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 558,
+    "avgMinutes": 557,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -492,6 +492,10 @@
     {
       "date": "2026-10-19",
       "minutes": 569
+    },
+    {
+      "date": "2026-10-20",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
@@ -569,6 +573,11 @@
       "title": "剑来",
       "author": null,
       "finishedAt": "2026-10-09T22:07:00.981Z"
+    },
+    {
+      "title": "遮天（同名国漫原著）",
+      "author": null,
+      "finishedAt": "2026-10-19T22:07:18.636Z"
     }
   ],
   "excludedBooks": [
