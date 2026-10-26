@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T16:00:01.648Z",
+  "updatedAt": "2026-10-26T04:00:02.410Z",
   "currentBook": {
     "title": "大医·日出篇",
     "bookId": "3300050599",
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 120,
-    "totalMinutes": 67079,
-    "totalHours": 1118,
+    "runDays": 121,
+    "totalMinutes": 67437,
+    "totalHours": 1124,
     "finishedCount": 16,
     "finishedUniqueCount": 8,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 559,
+    "avgMinutes": 557,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -516,6 +516,10 @@
     {
       "date": "2026-10-25",
       "minutes": 569
+    },
+    {
+      "date": "2026-10-26",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
