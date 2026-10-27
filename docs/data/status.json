@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-10-27T04:00:02.266Z",
+  "updatedAt": "2026-10-27T16:00:01.940Z",
   "currentBook": {
-    "title": "大医·日出篇",
-    "bookId": "3300050599",
-    "selectedAt": "2026-10-19T22:07:20.219Z",
-    "source": "shelf-auto-select"
+    "title": "经典国学合集（套装共18册）",
+    "bookId": "6403245071a0f6cd640b8fc",
+    "selectedAt": "2026-10-27T04:25:52.996Z",
+    "source": "我的书架"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 122,
-    "totalMinutes": 68006,
-    "totalHours": 1133.4,
-    "finishedCount": 16,
-    "finishedUniqueCount": 8,
+    "totalMinutes": 68218,
+    "totalHours": 1137,
+    "finishedCount": 18,
+    "finishedUniqueCount": 9,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 557,
+    "avgMinutes": 559,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -523,7 +523,7 @@
     },
     {
       "date": "2026-10-27",
-      "minutes": 358
+      "minutes": 570
     }
   ],
   "finishedBooks": [
@@ -606,6 +606,16 @@
       "title": "遮天（同名国漫原著）",
       "author": null,
       "finishedAt": "2026-10-19T22:07:18.636Z"
+    },
+    {
+      "title": "大医·日出篇",
+      "author": null,
+      "finishedAt": "2026-10-27T04:25:29.436Z"
+    },
+    {
+      "title": "大医·日出篇",
+      "author": null,
+      "finishedAt": "2026-10-27T04:25:48.689Z"
     }
   ],
   "excludedBooks": [
