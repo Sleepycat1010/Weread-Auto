@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-10-27T16:00:01.940Z",
+  "updatedAt": "2026-10-28T04:00:01.842Z",
   "currentBook": {
-    "title": "经典国学合集（套装共18册）",
-    "bookId": "6403245071a0f6cd640b8fc",
-    "selectedAt": "2026-10-27T04:25:52.996Z",
-    "source": "我的书架"
+    "title": "大医·破晓篇",
+    "bookId": "3300028808",
+    "selectedAt": "2026-10-27T22:00:27.136Z",
+    "source": "shelf-auto-select"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 122,
-    "totalMinutes": 68218,
-    "totalHours": 1137,
+    "runDays": 123,
+    "totalMinutes": 68576,
+    "totalHours": 1142.9,
     "finishedCount": 18,
     "finishedUniqueCount": 9,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 559,
+    "avgMinutes": 558,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -524,6 +524,10 @@
     {
       "date": "2026-10-27",
       "minutes": 570
+    },
+    {
+      "date": "2026-10-28",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
