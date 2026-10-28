@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-28T04:00:01.842Z",
+  "updatedAt": "2026-10-28T16:00:02.625Z",
   "currentBook": {
     "title": "大医·破晓篇",
     "bookId": "3300028808",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 123,
-    "totalMinutes": 68576,
-    "totalHours": 1142.9,
+    "totalMinutes": 68788,
+    "totalHours": 1146.5,
     "finishedCount": 18,
     "finishedUniqueCount": 9,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 558,
+    "avgMinutes": 559,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -527,7 +527,7 @@
     },
     {
       "date": "2026-10-28",
-      "minutes": 358
+      "minutes": 570
     }
   ],
   "finishedBooks": [
