@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-05T04:00:01.932Z",
+  "updatedAt": "2026-11-05T16:00:02.421Z",
   "currentBook": {
     "title": "喧哗与骚动（人文社外国文学名著经典·网格本）",
     "bookId": "33820335",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 131,
-    "totalMinutes": 73133,
-    "totalHours": 1218.9,
+    "totalMinutes": 73344,
+    "totalHours": 1222.4,
     "finishedCount": 20,
     "finishedUniqueCount": 10,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 558,
+    "avgMinutes": 560,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -559,7 +559,7 @@
     },
     {
       "date": "2026-11-05",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
