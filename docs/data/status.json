@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-07T04:00:02.226Z",
+  "updatedAt": "2026-11-07T16:00:01.582Z",
   "currentBook": {
     "title": "隋唐演义（全译本）",
-    "bookId": "f56326b0813abba33g0185eb",
-    "selectedAt": "2026-11-07T03:52:15.602Z",
-    "source": "我的书架"
+    "bookId": "3300214278",
+    "selectedAt": "2026-11-07T07:35:38.721Z",
+    "source": "shelf-auto-select"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 133,
-    "totalMinutes": 74272,
-    "totalHours": 1237.9,
+    "totalMinutes": 74483,
+    "totalHours": 1241.4,
     "finishedCount": 22,
     "finishedUniqueCount": 11,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 558,
+    "avgMinutes": 560,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -567,7 +567,7 @@
     },
     {
       "date": "2026-11-07",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
