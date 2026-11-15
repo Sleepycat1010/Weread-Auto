@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-15T04:00:02.091Z",
+  "updatedAt": "2026-11-15T16:00:02.116Z",
   "currentBook": {
     "title": "隋唐演义（全译本）",
     "bookId": "3300214278",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 141,
-    "totalMinutes": 78827,
-    "totalHours": 1313.8,
+    "totalMinutes": 79038,
+    "totalHours": 1317.3,
     "finishedCount": 22,
     "finishedUniqueCount": 11,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 559,
+    "avgMinutes": 561,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -599,7 +599,7 @@
     },
     {
       "date": "2026-11-15",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
