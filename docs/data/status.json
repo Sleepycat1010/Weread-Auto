@@ -1,9 +1,9 @@
 {
-  "updatedAt": "2026-11-17T04:00:02.654Z",
+  "updatedAt": "2026-11-17T16:00:02.530Z",
   "currentBook": {
-    "title": "隋唐演义（全译本）",
-    "bookId": "3300214278",
-    "selectedAt": "2026-11-07T07:35:38.721Z",
+    "title": "激荡十年，水大鱼大：中国企业2008-2018",
+    "bookId": "918297",
+    "selectedAt": "2026-11-17T07:36:10.864Z",
     "source": "shelf-auto-select"
   },
   "nextBook": {
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 143,
-    "totalMinutes": 79966,
-    "totalHours": 1332.8,
-    "finishedCount": 22,
-    "finishedUniqueCount": 11,
+    "totalMinutes": 80177,
+    "totalHours": 1336.3,
+    "finishedCount": 23,
+    "finishedUniqueCount": 12,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 559,
+    "avgMinutes": 561,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -607,7 +607,7 @@
     },
     {
       "date": "2026-11-17",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
@@ -720,6 +720,11 @@
       "title": "喧哗与骚动（人文社外国文学名著经典·网格本）",
       "author": null,
       "finishedAt": "2026-11-07T03:52:10.788Z"
+    },
+    {
+      "title": "隋唐演义（全译本）",
+      "author": null,
+      "finishedAt": "2026-11-17T07:36:09.336Z"
     }
   ],
   "excludedBooks": [
