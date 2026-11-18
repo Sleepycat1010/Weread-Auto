@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T04:00:02.521Z",
+  "updatedAt": "2026-11-18T16:00:02.078Z",
   "currentBook": {
     "title": "激荡十年，水大鱼大：中国企业2008-2018",
     "bookId": "918297",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 144,
-    "totalMinutes": 80535,
-    "totalHours": 1342.3,
+    "totalMinutes": 80746,
+    "totalHours": 1345.8,
     "finishedCount": 23,
     "finishedUniqueCount": 12,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 559,
+    "avgMinutes": 561,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -611,7 +611,7 @@
     },
     {
       "date": "2026-11-18",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
