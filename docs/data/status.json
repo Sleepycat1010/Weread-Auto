@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-23T04:00:03.005Z",
+  "updatedAt": "2026-11-23T16:00:01.861Z",
   "currentBook": {
     "title": "妈妈的银行账户",
-    "bookId": "02e32c30813ab943bg011fdd",
-    "selectedAt": "2026-11-23T01:17:51.192Z",
-    "source": "我的书架"
+    "bookId": "3300117071",
+    "selectedAt": "2026-11-23T07:35:43.216Z",
+    "source": "shelf-auto-select"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 149,
-    "totalMinutes": 83380,
-    "totalHours": 1389.7,
+    "totalMinutes": 83591,
+    "totalHours": 1393.2,
     "finishedCount": 25,
     "finishedUniqueCount": 13,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 560,
+    "avgMinutes": 561,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -631,7 +631,7 @@
     },
     {
       "date": "2026-11-23",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
