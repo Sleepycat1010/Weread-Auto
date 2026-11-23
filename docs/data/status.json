@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-22T16:00:02.149Z",
+  "updatedAt": "2026-11-23T04:00:03.005Z",
   "currentBook": {
-    "title": "激荡十年，水大鱼大：中国企业2008-2018",
-    "bookId": "918297",
-    "selectedAt": "2026-11-17T07:36:10.864Z",
-    "source": "shelf-auto-select"
+    "title": "妈妈的银行账户",
+    "bookId": "02e32c30813ab943bg011fdd",
+    "selectedAt": "2026-11-23T01:17:51.192Z",
+    "source": "我的书架"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 148,
-    "totalMinutes": 83022,
-    "totalHours": 1383.7,
-    "finishedCount": 23,
-    "finishedUniqueCount": 12,
+    "runDays": 149,
+    "totalMinutes": 83380,
+    "totalHours": 1389.7,
+    "finishedCount": 25,
+    "finishedUniqueCount": 13,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 561,
+    "avgMinutes": 560,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -628,6 +628,10 @@
     {
       "date": "2026-11-22",
       "minutes": 569
+    },
+    {
+      "date": "2026-11-23",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
@@ -745,6 +749,16 @@
       "title": "隋唐演义（全译本）",
       "author": null,
       "finishedAt": "2026-11-17T07:36:09.336Z"
+    },
+    {
+      "title": "激荡十年，水大鱼大：中国企业2008-2018",
+      "author": null,
+      "finishedAt": "2026-11-23T01:17:20.513Z"
+    },
+    {
+      "title": "激荡十年，水大鱼大：中国企业2008-2018",
+      "author": null,
+      "finishedAt": "2026-11-23T01:17:46.404Z"
     }
   ],
   "excludedBooks": [
