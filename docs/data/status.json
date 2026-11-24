@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T04:00:02.457Z",
+  "updatedAt": "2026-11-24T16:00:01.683Z",
   "currentBook": {
     "title": "妈妈的银行账户",
     "bookId": "3300117071",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 150,
-    "totalMinutes": 83949,
-    "totalHours": 1399.2,
+    "totalMinutes": 84160,
+    "totalHours": 1402.7,
     "finishedCount": 25,
     "finishedUniqueCount": 13,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 560,
+    "avgMinutes": 561,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -635,7 +635,7 @@
     },
     {
       "date": "2026-11-24",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
