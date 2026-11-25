@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-25T04:00:03.266Z",
+  "updatedAt": "2026-11-25T16:00:02.924Z",
   "currentBook": {
     "title": "彼得林奇点评版《股票作手回忆录》",
-    "bookId": "a5932df071f8efcba591283",
-    "selectedAt": "2026-11-25T00:18:19.157Z",
-    "source": "我的书架"
+    "bookId": "33091531",
+    "selectedAt": "2026-11-25T07:35:46.279Z",
+    "source": "shelf-auto-select"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -27,13 +27,13 @@
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
     "runDays": 151,
-    "totalMinutes": 84518,
-    "totalHours": 1408.6,
+    "totalMinutes": 84729,
+    "totalHours": 1412.2,
     "finishedCount": 27,
     "finishedUniqueCount": 14,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 560,
+    "avgMinutes": 561,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -639,7 +639,7 @@
     },
     {
       "date": "2026-11-25",
-      "minutes": 358
+      "minutes": 569
     }
   ],
   "finishedBooks": [
