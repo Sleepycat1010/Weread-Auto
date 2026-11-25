@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-11-24T16:00:01.683Z",
+  "updatedAt": "2026-11-25T04:00:03.266Z",
   "currentBook": {
-    "title": "妈妈的银行账户",
-    "bookId": "3300117071",
-    "selectedAt": "2026-11-23T07:35:43.216Z",
-    "source": "shelf-auto-select"
+    "title": "彼得林奇点评版《股票作手回忆录》",
+    "bookId": "a5932df071f8efcba591283",
+    "selectedAt": "2026-11-25T00:18:19.157Z",
+    "source": "我的书架"
   },
   "nextBook": {
     "title": "犹太人四千年（全两册）",
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 150,
-    "totalMinutes": 84160,
-    "totalHours": 1402.7,
-    "finishedCount": 25,
-    "finishedUniqueCount": 13,
+    "runDays": 151,
+    "totalMinutes": 84518,
+    "totalHours": 1408.6,
+    "finishedCount": 27,
+    "finishedUniqueCount": 14,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 561,
+    "avgMinutes": 560,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -636,6 +636,10 @@
     {
       "date": "2026-11-24",
       "minutes": 569
+    },
+    {
+      "date": "2026-11-25",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
@@ -763,6 +767,16 @@
       "title": "激荡十年，水大鱼大：中国企业2008-2018",
       "author": null,
       "finishedAt": "2026-11-23T01:17:46.404Z"
+    },
+    {
+      "title": "妈妈的银行账户",
+      "author": null,
+      "finishedAt": "2026-11-25T00:17:43.256Z"
+    },
+    {
+      "title": "妈妈的银行账户",
+      "author": null,
+      "finishedAt": "2026-11-25T00:18:14.106Z"
     }
   ],
   "excludedBooks": [
