@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T16:00:01.702Z",
+  "updatedAt": "2026-11-27T04:00:02.417Z",
   "currentBook": {
     "title": "彼得林奇点评版《股票作手回忆录》",
     "bookId": "33091531",
@@ -26,14 +26,14 @@
   "nextLeaderboard": "微信读书用户近期热读的出版书",
   "nextSourceHint": "我的书架（上次同步推算，待下次登录态刷新）",
   "stats": {
-    "runDays": 152,
-    "totalMinutes": 85298,
-    "totalHours": 1421.6,
+    "runDays": 153,
+    "totalMinutes": 85656,
+    "totalHours": 1427.6,
     "finishedCount": 27,
     "finishedUniqueCount": 14,
     "currentRunCount": 3,
     "dailyTargetMinutes": 570,
-    "avgMinutes": 561,
+    "avgMinutes": 560,
     "lastRunAt": "2026-09-09T21:47:07.214889+08:00"
   },
   "dailyMinutes": [
@@ -644,6 +644,10 @@
     {
       "date": "2026-11-26",
       "minutes": 569
+    },
+    {
+      "date": "2026-11-27",
+      "minutes": 358
     }
   ],
   "finishedBooks": [
